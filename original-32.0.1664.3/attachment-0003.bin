@@ -1,0 +1,27 @@
+--- a/build/common.gypi	2013-09-05 12:33:58.000000000 +0200
++++ b/build/common.gypi	2013-09-13 09:29:24.185329621 +0200
+@@ -2840,11 +2840,6 @@
+                   '-Wl,--as-needed',
+                 ],
+               }],
+-              ['OS=="linux" and target_arch=="ia32"', {
+-                'ldflags': [
+-                  '-Wl,--no-as-needed',
+-                ],
+-              }],
+             ],
+           },
+           'Release_Base': {
+@@ -3460,6 +3455,10 @@
+               # gets the right path.
+               '-B<(PRODUCT_DIR)/../../third_party/gold',
+             ],
++	    }, {
++	            'ldflags': [
++	            '-Wl,--no-as-needed',
++		 ],
+           }],
+           ['native_discardable_memory', {
+             'defines': ['DISCARDABLE_MEMORY_ALWAYS_SUPPORTED_NATIVELY'],
+
+

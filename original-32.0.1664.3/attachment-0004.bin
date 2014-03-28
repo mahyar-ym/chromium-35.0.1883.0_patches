@@ -1,0 +1,19 @@
+diff --git a/ui/gl/gl.gyp b/ui/gl/gl.gyp
+index 274065b..e857f9c 100644
+--- a/ui/gl/gl.gyp
++++ b/ui/gl/gl.gyp
+@@ -123,6 +123,12 @@
+         '<(gl_binding_output_dir)/gl_bindings_autogen_osmesa.h',
+         '<(gl_binding_output_dir)/gl_interface_autogen_gl.h',
+       ],
++      'link_settings': {
++        'libraries': [
++          '-lEGL',
++          '-lGAL',
++        ],
++      },
+       # hard_dependency is necessary for this target because it has actions
+       # that generate header files included by dependent targets. The header
+       # files must be generated before the dependents are compiled. The usual
+
+

@@ -1,0 +1,27 @@
+diff --git a/build/common.gypi b/build/common.gypi
+index 28e3389..6b77bcf 100644
+--- a/build/common.gypi
++++ b/build/common.gypi
+@@ -3085,11 +3085,6 @@
+                   '-Wl,--as-needed',
+                 ],
+               }],
+-              ['OS=="linux" and target_arch=="ia32"', {
+-                'ldflags': [
+-                  '-Wl,--no-as-needed',
+-                ],
+-              }],
+               ['debug_unwind_tables==1', {
+                 'cflags': ['-funwind-tables'],
+               }, {
+@@ -3723,6 +3718,10 @@
+               # gets the right path.
+               '-B<!(cd <(DEPTH) && pwd -P)/third_party/gold',
+             ],
++            }, {
++                    'ldflags': [
++                    '-Wl,--no-as-needed',
++                 ],
+           }],
+         ],
+       },
